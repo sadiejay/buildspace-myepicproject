@@ -29,6 +29,18 @@ const main = async() => {
   // Fetch data from the account.
   let account = await program.account.baseAccount.fetch(baseAccount.publicKey);
   console.log('👀 GIF Count', account.totalGifs.toString())
+
+  // Call add_gif!
+  await program.rpc.addGif({
+    accounts: {
+      baseAccount: baseAccount.publicKey,
+    },
+  });
+  
+  // Get the account again to see what changed.
+  account = await program.account.baseAccount.fetch(baseAccount.publicKey);
+  console.log('👀 GIF Count', account.totalGifs.toString())
+
 }
 
 // main func will run async
