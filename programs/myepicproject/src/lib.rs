@@ -12,6 +12,10 @@ declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 pub mod myepicproject {
     use super::*;
     pub fn start_stuff_off(ctx: Context<StartStuffOff>) -> ProgramResult {
+      // Get a reference to the account.
+      let base_account = &mut ctx.accounts.base_account;
+      // Initialize total_gifs.
+      base_account.total_gifs = 0;
       Ok(())
     }
   }
