@@ -18,3 +18,10 @@ pub mod myepicproject {
 // attribute macro that will specify different account constraints
 #[derive(Accounts)]
     pub struct StartStuffOff {}
+
+
+// Tell Solana what we want to store on this account.
+#[account]
+pub struct BaseAccount {
+    pub total_gifs: u64,
+}
