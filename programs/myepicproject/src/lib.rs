@@ -15,3 +15,6 @@ pub mod myepicproject {
       Ok(())
     }
   }
+// attribute macro that will specify different account constraints
+#[derive(Accounts)]
+    pub struct StartStuffOff {}
